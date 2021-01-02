@@ -5,6 +5,8 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <Windows.h>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -13,7 +15,7 @@ int main()
     SetConsoleTitle(TEXT("Where are you headed?"));
 
     string choice;
-    cout << "Where ya headed? (Casino, Calculator, Discord, Github)" << endl;
+    cout << "Where ya headed? (Casino, Calculator, Password, Discord, Github)" << endl;
     cin >> choice;
     if (choice == "discord" or choice == "Discord") {
         SetConsoleTitle(TEXT("Discord"));
@@ -93,5 +95,25 @@ int main()
         string url = "https://github.com/iParmo";
         string open = string("start ").append(url);
         system(open.c_str());
+    }
+    else if (choice == "password" or choice == "Password") {
+        string username;
+        string password;
+        string fileName;
+
+        cout << "What should this file be called? (Please include no spaces or special characters only - and _)" << endl;
+        cin >> fileName;
+        cout << "The name of the file is " << fileName << ".txt" << endl;
+        cout << "Enter your username/email: ";
+        cin >> username;
+        cout << "Now enter your password: ";
+        cin >> password;
+
+        ofstream file;
+        file.open(fileName + ".txt");
+        file << "Email/Username: " << username << "\nPassword: " << password;
+        file.close();
+
+        cout << "Finished.";
     }
 }
