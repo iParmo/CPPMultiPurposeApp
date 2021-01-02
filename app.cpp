@@ -58,6 +58,8 @@ int main()
         }
     }
     else if (choice == "calculator" or choice == "Calculator") {
+        SetConsoleTitle(TEXT("Calculator"));
+        
         string op;
         double num1;
         double num2;
