@@ -11,9 +11,9 @@ using namespace std;
 int main()
 {
     SetConsoleTitle(TEXT("Where are you headed?"));
-    
+
     string choice;
-    cout << "Where ya headed? (Casino, Calculator, Discord)" << endl;
+    cout << "Where ya headed? (Casino, Calculator, Discord, Github)" << endl;
     cin >> choice;
     if (choice == "discord" or choice == "Discord") {
         SetConsoleTitle(TEXT("Discord"));
@@ -59,7 +59,7 @@ int main()
     }
     else if (choice == "calculator" or choice == "Calculator") {
         SetConsoleTitle(TEXT("Calculator"));
-        
+
         string op;
         double num1;
         double num2;
@@ -86,5 +86,12 @@ int main()
         else {
             cout << "Invalid input.";
         }
-
+    }
+    else if (choice == "github" or choice == "Github") {
+        SetConsoleTitle(TEXT("Github"));
+        cout << "Opening URL";
+        string url = "https://github.com/iParmo";
+        string open = string("start ").append(url);
+        system(open.c_str());
+    }
 }
